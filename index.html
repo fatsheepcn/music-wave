@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Music Wave</title>
+    <style>
+        input {display: block;}
+        input[type="range"] {width: 300px;}
+        #play {display: none;}
+    </style>
+</head>
+<body>
+    <span>高通滤波(filter):</span>
+    <input type="range" id="filter" onchange="sliderChange(this)" min="0" max="2048" step="1" value="1024" />
+
+    <span>声道(Pan):</span>
+    <input type="range" id="pan" onchange="sliderChange(this)" min="-4" max="4" step="0.5" value="0">
+
+    <span>音量(Volume):</span>
+    <input type="range" id="volume" onchange="sliderChange(this)" min="0" max="1" step="0.1" value="2">
+
+    <div id="loading">loading music ...</div>
+    <input type="button" id="play" onclick="toggleSound(this)" value="Play" />
+    <canvas width="300" height="200"></canvas>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
